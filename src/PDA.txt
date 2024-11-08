@@ -1,0 +1,11 @@
+5
+4
+a b
+a L
+0 a/L -> 1/aaaaL
+0 b/L -> 3/L
+1 a/a -> 1/aaaaa
+1 b/a -> 2/{e}
+2 b/a -> 2/{e}
+2 b/L -> 3/L
+3 b/L -> 4/L
