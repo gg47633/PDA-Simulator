@@ -88,6 +88,10 @@ public class PDASimulator {
       int currentState = Integer.parseInt(lhsParts[0]);
       String inputChar = lhsParts[1];
       String popStack = lhsParts[3];
+      if(inputChar.equals("{") && lhsParts[2].equals("e") && lhsParts[3].equals("}")) {
+        inputChar = "{e}";
+        popStack = lhsParts[5];
+      }
 
       String[] rhsParts = rhs.split("/");
       int nextState = Integer.parseInt(rhsParts[0]);
@@ -165,6 +169,8 @@ public class PDASimulator {
     while (true) {
       String beforeStack = stack.isEmpty() ? "{e}" : stack.peek();
       String beforeInput = remainingInput;
+      if(remainingInput.isEmpty())
+        beforeInput = "{e}";
 
       String stackTop = stack.isEmpty() ? "" : stack.peek();
       String inputChar = remainingInput.isEmpty() ? "{e}" : String.valueOf(remainingInput.charAt(0));
