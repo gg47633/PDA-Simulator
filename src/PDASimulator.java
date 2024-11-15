@@ -213,11 +213,11 @@ public class PDASimulator {
       currentState = nextState;
       remainingInput = nextRemainingInput;
 
-      if (remainingInput.isEmpty() && acceptStates.contains(currentState) && stack.isEmpty()) {
-        System.out.println(currentState + ", {e}/" + "{e}");
+      if (remainingInput.isEmpty() && acceptStates.contains(currentState) && stackTop.equals(bottomOfStackSymbol)) {
+        System.out.println(currentState + ", {e}/" + bottomOfStackSymbol);
         return true;
       }
-      if (remainingInput.isEmpty() && acceptStates.contains(currentState) && !stack.isEmpty()) {
+      if (remainingInput.isEmpty() && acceptStates.contains(currentState) && !stackTop.equals(bottomOfStackSymbol)) {
         System.out.println(currentState + ", {e}/" + stack.peek());
         return false;
       }
